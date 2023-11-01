@@ -1,48 +1,51 @@
 .six {
   transform: scale(1);
-  .modal-background {
-    background: rgba(0, 0, 0, 0);
-    animation: fadeIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-    .modal {
-      background-color: transparent;
-      animation: modalFadeIn 0.5s 0.8s cubic-bezier(0.165, 0.84, 0.44, 1)
-        forwards;
-      h2,
-      p {
-        opacity: 0;
-        position: relative;
-        animation: modalContentFadeIn 0.5s 1s cubic-bezier(0.165, 0.84, 0.44, 1)
-          forwards;
-      }
-      .modal-svg {
-        rect {
-          animation: sketchIn 0.5s 0.3s cubic-bezier(0.165, 0.84, 0.44, 1)
-            forwards;
-        }
-      }
-    }
-  }
-  &.out {
-    animation: quickScaleDown 0s 0.5s linear forwards;
-    .modal-background {
-      animation: fadeOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-      .modal {
-        animation: modalFadeOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-        h2,
-        p {
-          animation: modalContentFadeOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1)
-            forwards;
-        }
-        .modal-svg {
-          rect {
-            animation: sketchOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1)
-              forwards;
-          }
-        }
-      }
-    }
-  }
 }
+
+.six .modal-background {
+  background: rgba(0, 0, 0, 0);
+  animation: fadeIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.six .modal-background .modal {
+  background-color: transparent;
+  animation: modalFadeIn 0.5s 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.six .modal-background .modal h2,
+.six .modal-background .modal p {
+  opacity: 0;
+  position: relative;
+  animation: modalContentFadeIn 0.5s 1s cubic-bezier(0.165, 0.84, 0.44, 1)
+    forwards;
+}
+
+.six .modal-background .modal .modal-svg rect {
+  animation: sketchIn 0.5s 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.six.out {
+  animation: quickScaleDown 0s 0.5s linear forwards;
+}
+
+.six.out .modal-background {
+  animation: fadeOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.six.out .modal-background .modal {
+  animation: modalFadeOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.six.out .modal-background .modal h2,
+.six.out .modal-background .modal p {
+  animation: modalContentFadeOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1)
+    forwards;
+}
+
+.six.out .modal-background .modal .modal-svg rect {
+  animation: sketchOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
 @keyframes modalFadeOut {
   0% {
     background-color: white;
@@ -51,6 +54,7 @@
     background-color: transparent;
   }
 }
+
 @keyframes modalFadeIn {
   0% {
     background-color: transparent;
@@ -59,6 +63,7 @@
     background-color: white;
   }
 }
+
 @keyframes sketchIn {
   0% {
     stroke-dashoffset: 778;
@@ -67,6 +72,7 @@
     stroke-dashoffset: 0;
   }
 }
+
 @keyframes modalContentFadeIn {
   0% {
     opacity: 0;
@@ -77,6 +83,7 @@
     top: 0;
   }
 }
+
 @keyframes quickScaleDown {
   0% {
     transform: scale(1);
@@ -88,6 +95,7 @@
     transform: scale(0);
   }
 }
+
 @keyframes fadeOut {
   0% {
     background: rgba(0, 0, 0, 0.7);
@@ -96,6 +104,7 @@
     background: rgba(0, 0, 0, 0);
   }
 }
+
 @keyframes modalContentFadeOut {
   0% {
     opacity: 1;
